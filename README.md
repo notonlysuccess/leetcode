@@ -1,4 +1,4 @@
-各题简短分析**非完全版**
+各题简短分析 (非完全版)  
 ===
 3Sum Closest		O(n^2log(n))  
 3Sum			O(n^2log(n))  
