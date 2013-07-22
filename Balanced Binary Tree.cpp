@@ -9,20 +9,19 @@
  */
 class Solution {
 private:
-	bool ret;
-	int dfs(TreeNode *root) {
-		if (root == NULL) return 0;
-		int left = dfs(root->left);
-		int right = dfs(root->right);
-		if (abs(left - right) > 1) {
-			ret = false;
-		}
-		return max(left , right) + 1;
-	}
+    int check(TreeNode *root) {
+        if (root == NULL) {
+            return 0;
+        }
+        int left = check(root->left);
+        int right = check(root->right);
+        if (left == -1 || right == -1 || abs(left - right) > 1) {
+            return -1;
+        }
+        return max(left , right) + 1;
+    }
 public:
     bool isBalanced(TreeNode *root) {
-        ret = true;
-        dfs(root);
-        return ret;
+        return check(root) != -1;
     }
 };

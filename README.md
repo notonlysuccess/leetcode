@@ -1,17 +1,75 @@
-3Sum Closest		O(n^2log(n))  
-3Sum			O(n^2log(n))  
-4Sum			O(n^3log(n))  
-Add Binary		模拟二进制加法  
-Add Two Numbers		模拟链表加法，同上  
-Anagrams		筛选出由相同字母组成的字符串  
-Balanced Binary Tree	检查是否是二叉平衡树  
-Best Time to Buy and Sell Stock III	知道股票每日价格，只能交易两笔，卖了之后才能买，要求O(n) ， 两边dp	***  
-Best Time to Buy and Sell Stock II	知道股票每日价格，可以交易任意笔，要求O(n)，只需要查找一遍  
-Best Time to Buy and Sell Stock		知道股票每日价格，只能交易一笔，要求O(n)简单DP  
-Binary Tree Inorder Traversal		简单遍历二叉树  
+
+<table border="1">
+<tr>
+<th width = "300">3Sum Closest</th>		
+<td>O(n^2) 求三个数字之和最接近target的数字,排序后循环一层,接下去两端向中间靠拢</td>
+<td>80ms</td>
+</tr>
+<tr>
+<th>3Sum</th>				
+<td>O(n^2) 求3个数字之和为0的组合,同上,注意去重</td> 
+<td>250ms</td>
+</tr>
+<tr>
+<th rowspan="2"><font color="red">4Sum</font></th>
+<td>O(n^3) 求4个数字之和为0的组合,同3Sum,第三层循环两端向中间靠拢</td>
+<td>250ms</td>
+</tr>
+<tr>
+<td>O(n^2log(n))+大常数 将原数组两两相加组成一个二元组(num[i]+num[j],i,j),接着对原数组两层for循环并对二元组二分取值,用下标保证不重复</td>
+<td>1100ms</td>
+</tr>
+<tr>
+<th>Add Binary</th>
+<td>模拟二进制加法,一个for循环</td>
+<td>20ms</td>
+</tr>
+<tr>
+<th>Add Two Numbers</th>
+<td>链表加法,同上,一个for循环</td>
+<td>200ms</td>
+</tr>
+<tr>
+<th>Anagrams</th>
+<td>选取strs中由相同字符构成的串,用map<\string,vector<\string> >解决,排序后的str做key,然后把原值塞进vector中</td>
+<td>250ms</td>
+</tr>
+<tr>
+<th>Balanced Binary Tree</th>
+<td>检查是否是二叉平衡树,任意节点的左右子树高度差不超过1,递归解决</td>
+<td>68ms</td>
+</tr>
+<tr>
+<th><font color="red">Best Time to Buy and Sell Stock III</font></th>
+<td>O(n) 知道股票每日价格,只能交易两笔,卖了之后才能买,两边DP</td>
+<td>60ms</td>
+</tr>
+<tr>
+<th>Best Time to Buy and Sell Stock II</th>
+<td>O(n) 知道股票每日价格,可以交易任意笔,差值求和</td>
+<td>48ms</td>
+</tr>
+<tr>
+<th>Best Time to Buy and Sell Stock </th>
+<td>O(n) 知道股票每日价格,只能交易一笔,记录最小值</td>
+<td>56ms</td>
+</tr>
+<tr>
+<th>Binary Tree Inorder Traversal</th>
+<td>in-order遍历二叉树</td>
+<td>12ms</td>
+</tr>
+<tr>
+<th></th>
+<td></td>
+<td></td>
+</tr>
+</table>
+	 
+		  
 Binary Tree Level Order Traversal II	简单遍历二叉树  
 Binary Tree Level Order Traversal	简单遍历二叉树  
-Binary Tree Maximum Path Sum		简单树形DP，权值只和最大的一段路径	特别要注意负数	***  
+Binary Tree Maximum Patd Sum		简单树形DP，权值只和最大的一段路径	特别要注意负数	***  
 Binary Tree Zigzag Level Order Traversal	简单遍历二叉树	  
 Climbing Stairs		Fibonacci  
 Combination Sum II	递归  

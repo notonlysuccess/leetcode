@@ -8,16 +8,19 @@
  * };
  */
 class Solution {
+private:
+    void dfs(TreeNode *root,vector<int> &ret) {
+        if (root == NULL) {
+            return ;
+        }
+        dfs(root->left , ret);
+        ret.push_back(root->val);
+        dfs(root->right , ret);
+    }
 public:
-    void dfs(TreeNode *root , vector<int> &ret) {
-		if (root == NULL) return ;
-		dfs(root->left , ret);
-		ret.push_back(root->val);
-		dfs(root->right , ret);
-	}
-	vector<int> inorderTraversal(TreeNode *root) {
-		vector<int> ret;
-		dfs(root , ret);
-		return ret;
-	}
+    vector<int> inorderTraversal(TreeNode *root) {
+        vector<int> ret;
+        dfs(root , ret);
+        return ret;
+    }
 };

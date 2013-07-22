@@ -6,33 +6,23 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
- class Solution {
- private:
-    void Add(int add,bool &carry) {
- 		ListNode *temp = new ListNode(0);
- 		temp->val = (add + carry) % 10;
- 		ret->next = temp;
- 		carry = add + carry > 9;
- 		ret = temp;
- 	}
- 	ListNode *ret;
- public:
- 	ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
- 		ret = new ListNode(0);
- 		ListNode *head = ret;
- 		bool carry = false;
- 		for ( ; l1 && l2 ; l1 = l1->next , l2 = l2->next) {
- 			Add(l1->val + l2->val , carry);
- 		}
- 		for ( ; l1 ; l1 = l1->next) {
- 			Add(l1->val , carry);
- 		}
- 		for ( ; l2 ; l2 = l2->next) {
- 			Add(l2->val , carry);
- 		}
- 		if (carry) {
- 			Add(0 , carry);
- 		}
- 		return head->next;
- 	}
- };
+class Solution {
+public:
+    ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
+        int carry = 0;
+        ListNode *head = new ListNode(0);
+        ListNode *tail = head;
+        for ( ; l1 || l2 || carry ; ) {
+            int l1_val = l1 ? l1->val : 0;
+            int l2_val = l2 ? l2->val : 0;
+            int sum = l1_val + l2_val + carry;
+            carry = sum > 9;
+            ListNode *node = new ListNode(sum%10);
+            tail->next = node;
+            tail = node;
+            if (l1) l1 = l1->next;
+            if (l2) l2 = l2->next;;
+        }
+        return head->next;
+    }
+};
