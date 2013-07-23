@@ -11,7 +11,7 @@
 <td>250ms</td>
 </tr>
 <tr>
-<td rowspan="2">**4Sum**</td>
+<td rowspan="2"><b>4Sum</b></td>
 <td>O(n^3) 求4个数字之和为0的组合,同3Sum,第三层循环两端向中间靠拢</td>
 <td>250ms</td>
 </tr>
@@ -40,7 +40,7 @@
 <td>68ms</td>
 </tr>
 <tr>
-<td>**Best Time to Buy and Sell Stock III**</td>
+<td><b>Best Time to Buy and Sell Stock III</b></td>
 <td>O(n) 知道股票每日价格,只能交易两笔,卖了之后才能买,两边DP</td>
 <td>60ms</td>
 </tr>
@@ -110,7 +110,7 @@
 <td>176ms</td>
 </tr>
 <tr>
-<td>**Container With Most Water**</td>
+<td><b>Container With Most Water</b></td>
 <td>一排直线,找两条线使得能装下的水最多</td>
 <td>100ms</td>
 </tr>
