@@ -1,22 +1,24 @@
 class Solution {
+private:
+    void comb(vector<vector<int> >&ret , vector<int> &temp , vector<int> &num, int index, int target) {
+        if (target == 0) {
+            ret.push_back(temp);
+            return ;
+        }
+        for (int i = index ; i < num.size() ; i ++) {
+            if (num[i] <= target) {
+                temp.push_back(num[i]);
+                comb(ret , temp , num , i ,target - num[i]);
+                temp.pop_back();
+            }
+        }
+    }
 public:
-	void dfs(vector<int> &num,int target,int start,set<vector<int> > &ret,vector<int> &temp) {
-		if (target == 0) {
-			ret.insert(temp);
-			return ;
-		}
-		for (int i = start ; i < num.size() ; i ++) {
-			if (num[i] > target) break;
-			temp.push_back(num[i]);
-			dfs(num , target - num[i] , i , ret , temp);
-			temp.pop_back();
-		}
-	}
-	vector<vector<int> > combinationSum(vector<int> &num, int target) {
-		set<vector<int> > ret;
-		vector<int> temp;
-		sort(num.begin() , num.end());
-		dfs(num , target , 0 , ret , temp);
-		return vector<vector<int> >(ret.begin() , ret.end());
-	}
+    vector<vector<int> > combinationSum(vector<int> &num, int target) {
+        vector<vector<int> > ret;
+        vector<int> temp;
+        sort(num.begin() , num.end());
+        comb(ret , temp , num , 0 , target);
+        return ret;
+    }
 };

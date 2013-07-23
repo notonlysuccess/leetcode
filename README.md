@@ -60,24 +60,68 @@
 <td>12ms</td>
 </tr>
 <tr>
+<th>Binary Tree Level Order Traversal II</th>
+<td>简单遍历二叉树,从叶子到根的顺序装进vector</td>
+<td>132ms</td>
+</tr>
+<tr>
+<th>Binary Tree Level Order Traversal</th>
+<td>简单遍历二叉树,从根到叶子的顺序装进vector</td>
+<td>24ms</td>
+</tr>
+<tr>
+<th><font color="red">Binary Tree Maximum Patd Sum</font></th>
+<td>简单树形DP，权值只和最大的一段路径	特别要注意负数</td>
+<td>152ms</td>
+</tr>
+<tr>
+<th>Binary Tree Zigzag Level Order Traversal</th>
+<td>简单遍历二叉树,从根到叶子,奇数层从左到右,偶数层从右到左</td>
+<td>28ms</td>
+</tr>
+<tr>
+<th>Climbing Stairs</th>
+<td>Fibonacci</td>
+<td>12ms</td>
+</tr>
+<tr>
+<th>Combination Sum II</th>
+<td>简单递归,从数组C中找一些数字组使这些数字和为T,一个数字用一次,且答案不能重复</td>
+<td>60ms</td>
+</tr>
+<tr>
+<th>Combination Sum</th>
+<td>简单递归,从数组C中找一些数字组使这些数字和为T,一个数字用任意次</td>
+<td>60ms</td>
+</tr>
+<tr>
+<th>Combinations</th>
+<td>简单递归,列出所有k个数字(1-n)的组合</td>
+<td>56ms</td>
+</tr>
+<tr>
+<th>Construct Binary Tree from Inorder and Postorder Traversal</th>
+<td>知道中序和后序，构建树，要注意内存</td>
+<td>168ms</td>
+</tr>
+<tr>
+<th>Construct Binary Tree from Preorder and Inorder Traversal</th>
+<td>知道中序和前序，构建树，要注意内存</td>
+<td>176ms</td>
+</tr>
+<tr>
+<th>Container With Most Water</th>
+<td>一排直线,找两条线使得能装下的水最多</td>
+<td>100ms</td>
+</tr>
+
+<tr>
 <th></th>
 <td></td>
 <td></td>
 </tr>
 </table>
 	 
-		  
-Binary Tree Level Order Traversal II	简单遍历二叉树  
-Binary Tree Level Order Traversal	简单遍历二叉树  
-Binary Tree Maximum Patd Sum		简单树形DP，权值只和最大的一段路径	特别要注意负数	***  
-Binary Tree Zigzag Level Order Traversal	简单遍历二叉树	  
-Climbing Stairs		Fibonacci  
-Combination Sum II	递归  
-Combination Sum		同上  
-Combinations		同上  
-Construct Binary Tree from Inorder and Postorder Traversal	知道中序和后序，构建树，要注意内存	***  
-Construct Binary Tree from Preorder and Inorder Traversal	知道前序和中序，构件树，同上  
-Container With Most Water	很赞的一题，从n^2,到nlogn到n		***  
 Convert Sorted Array to Binary Search Tree	简单递归  
 Convert Sorted List to Binary Search Tree	简单递归，比上题略难	***  
 Count and Say			简单模拟  

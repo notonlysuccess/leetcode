@@ -8,17 +8,23 @@
  * };
  */
 class Solution {
+private:
+    void traversal(vector<vector<int> >&ret , TreeNode *root , int deep) {
+        if (root == NULL) {
+            return ;
+        }
+        if (deep == ret.size()) {
+            ret.push_back(vector<int>(1 , root->val));
+        } else {
+            ret[deep].push_back(root->val);
+        }
+        traversal(ret , root->left , deep + 1);
+        traversal(ret , root->right , deep + 1);
+    }
 public:
-	void dfs(TreeNode *root , vector<vector<int> > &ret , int deep) {
-		if (root == NULL) return ;
-		if (ret.size() == deep) ret.push_back(vector<int>());
-		ret[deep].push_back(root->val);
-		dfs(root->left , ret , deep + 1);
-		dfs(root->right , ret , deep + 1);
-	}
-	vector<vector<int> > levelOrder(TreeNode *root) {
-		vector<vector<int> > ret;
-		dfs(root , ret , 0);
-		return ret;
-	}
+    vector<vector<int> > levelOrder(TreeNode *root) {
+        vector<vector<int> > ret;
+        traversal(ret , root , 0);
+        return ret;
+    }
 };
