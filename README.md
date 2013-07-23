@@ -1,17 +1,17 @@
 
 <table border="1">
 <tr>
-<th width = "300">3Sum Closest</th>		
+<td width = "300">3Sum Closest</td>		
 <td>O(n^2) 求三个数字之和最接近target的数字,排序后循环一层,接下去两端向中间靠拢</td>
 <td>80ms</td>
 </tr>
 <tr>
-<th>3Sum</th>				
+<td>3Sum</td>				
 <td>O(n^2) 求3个数字之和为0的组合,同上,注意去重</td> 
 <td>250ms</td>
 </tr>
 <tr>
-<th rowspan="2"><font color="red">4Sum</font></th>
+<td rowspan="2">**4Sum**</td>
 <td>O(n^3) 求4个数字之和为0的组合,同3Sum,第三层循环两端向中间靠拢</td>
 <td>250ms</td>
 </tr>
@@ -20,103 +20,103 @@
 <td>1100ms</td>
 </tr>
 <tr>
-<th>Add Binary</th>
+<td>Add Binary</td>
 <td>模拟二进制加法,一个for循环</td>
 <td>20ms</td>
 </tr>
 <tr>
-<th>Add Two Numbers</th>
+<td>Add Two Numbers</td>
 <td>链表加法,同上,一个for循环</td>
 <td>200ms</td>
 </tr>
 <tr>
-<th>Anagrams</th>
+<td>Anagrams</td>
 <td>选取strs中由相同字符构成的串,用map<\string,vector<\string> >解决,排序后的str做key,然后把原值塞进vector中</td>
 <td>250ms</td>
 </tr>
 <tr>
-<th>Balanced Binary Tree</th>
+<td>Balanced Binary Tree</td>
 <td>检查是否是二叉平衡树,任意节点的左右子树高度差不超过1,递归解决</td>
 <td>68ms</td>
 </tr>
 <tr>
-<th><font color="red">Best Time to Buy and Sell Stock III</font></th>
+<td>**Best Time to Buy and Sell Stock III**</td>
 <td>O(n) 知道股票每日价格,只能交易两笔,卖了之后才能买,两边DP</td>
 <td>60ms</td>
 </tr>
 <tr>
-<th>Best Time to Buy and Sell Stock II</th>
+<td>Best Time to Buy and Sell Stock II</td>
 <td>O(n) 知道股票每日价格,可以交易任意笔,差值求和</td>
 <td>48ms</td>
 </tr>
 <tr>
-<th>Best Time to Buy and Sell Stock </th>
+<td>Best Time to Buy and Sell Stock </td>
 <td>O(n) 知道股票每日价格,只能交易一笔,记录最小值</td>
 <td>56ms</td>
 </tr>
 <tr>
-<th>Binary Tree Inorder Traversal</th>
+<td>Binary Tree Inorder Traversal</td>
 <td>in-order遍历二叉树</td>
 <td>12ms</td>
 </tr>
 <tr>
-<th>Binary Tree Level Order Traversal II</th>
+<td>Binary Tree Level Order Traversal II</td>
 <td>简单遍历二叉树,从叶子到根的顺序装进vector</td>
 <td>132ms</td>
 </tr>
 <tr>
-<th>Binary Tree Level Order Traversal</th>
+<td>Binary Tree Level Order Traversal</td>
 <td>简单遍历二叉树,从根到叶子的顺序装进vector</td>
 <td>24ms</td>
 </tr>
 <tr>
-<th><font color="red">Binary Tree Maximum Patd Sum</font></th>
-<td>简单树形DP，权值只和最大的一段路径	特别要注意负数</td>
+<td><b>Binary Tree Maximum Patd Sum</b></td>
+<td>简单树形DP，权值之和最大的一段路径	特别要注意负数</td>
 <td>152ms</td>
 </tr>
 <tr>
-<th>Binary Tree Zigzag Level Order Traversal</th>
+<td>Binary Tree Zigzag Level Order Traversal</td>
 <td>简单遍历二叉树,从根到叶子,奇数层从左到右,偶数层从右到左</td>
 <td>28ms</td>
 </tr>
 <tr>
-<th>Climbing Stairs</th>
+<td>Climbing Stairs</td>
 <td>Fibonacci</td>
 <td>12ms</td>
 </tr>
 <tr>
-<th>Combination Sum II</th>
+<td>Combination Sum II</td>
 <td>简单递归,从数组C中找一些数字组使这些数字和为T,一个数字用一次,且答案不能重复</td>
 <td>60ms</td>
 </tr>
 <tr>
-<th>Combination Sum</th>
+<td>Combination Sum</td>
 <td>简单递归,从数组C中找一些数字组使这些数字和为T,一个数字用任意次</td>
 <td>60ms</td>
 </tr>
 <tr>
-<th>Combinations</th>
+<td>Combinations</td>
 <td>简单递归,列出所有k个数字(1-n)的组合</td>
 <td>56ms</td>
 </tr>
 <tr>
-<th>Construct Binary Tree from Inorder and Postorder Traversal</th>
+<td>Construct Binary Tree from Inorder and Postorder Traversal</td>
 <td>知道中序和后序，构建树，要注意内存</td>
 <td>168ms</td>
 </tr>
 <tr>
-<th>Construct Binary Tree from Preorder and Inorder Traversal</th>
+<td>Construct Binary Tree from Preorder and Inorder Traversal</td>
 <td>知道中序和前序，构建树，要注意内存</td>
 <td>176ms</td>
 </tr>
 <tr>
-<th>Container With Most Water</th>
+<td>**Container With Most Water**</td>
 <td>一排直线,找两条线使得能装下的水最多</td>
 <td>100ms</td>
 </tr>
 
 <tr>
-<th></th>
+<td></td>
 <td></td>
 <td></td>
 </tr>
