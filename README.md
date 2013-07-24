@@ -114,6 +114,61 @@
 <td>一排直线,找两条线使得能装下的水最多</td>
 <td>100ms</td>
 </tr>
+<tr>
+<td>Convert Sorted Array to Binary Search Tree</td>
+<td>以排好序的数组生成BST,找到中间节点,用preorder生成</td>
+<td>92ms</td>
+</tr>
+<tr>
+<td><b>Convert Sorted List to Binary Search Tree</b></td>
+<td>已排好序的链表生成BST,先得到长度,然后用inorder来生成</td>
+<td>164ms</td>
+</tr>
+<tr>
+<td><b>Count and Say</b></td>
+<td>简单模拟 1->11->21->1211->... </td>
+<td>20ms</td>
+</tr>
+<tr>
+<td>Decode Ways</td>
+<td>简单DP O(n) 把字符串分段使得每一段都是1-26的方法数</td>
+<td>16ms</td>
+</tr>
+<tr>
+<td>Distinct Subsequences</td>
+<td>简单DP O(n*m) 有多少个S的子串包含T 注意边界</td>
+<td>72ms</td>
+</tr>
+<tr>
+<td><b>Divide Two Integers</b></td>
+<td>模拟除法,用位运算,注意边界,int转正数会溢出,转成负数做</td>
+<td>64ms</td>
+</tr>
+<tr>
+<td><b>Edit Distance</b></td>
+<td>O(n*m) 最短编辑距离 注意边界</td>
+<td>140ms</td>
+</tr>
+<tr>
+<td><b>First Missing Positive<b/></td>
+<td>找到最小不存在的正整数,O(1)空间</td>
+<td></td>
+</tr>
+<tr>
+<td><b>Flatten Binary Tree to Linked List</b></td>
+<td>将二叉树重构,只有右儿子</td>
+<td>52ms</td>
+</tr>
+<tr>
+<td>Generate Parentheses</td>
+<td>简单递归 生成匹配的括号</td>
+<td>12ms</td>
+</tr>
+<tr>
+<td><b>Gray Code</b></td>
+<td>格雷码 公式i^(i>>1)</td>
+<td>36ms</td>
+</tr>
 
 <tr>
 <td></td>
@@ -121,18 +176,7 @@
 <td></td>
 </tr>
 </table>
-	 
-Convert Sorted Array to Binary Search Tree	简单递归  
-Convert Sorted List to Binary Search Tree	简单递归，比上题略难	***  
-Count and Say			简单模拟  
-Decode Ways			简单DP	  
-Distinct Subsequences		简单DP  
-Divide Two Integers		模拟除法，不用*/% 要注意符号，溢出等边界，转为负数	***  
-Edit Distance			最短编辑距离，注意边界  
-First Missing Positive		O(n)且常数时间，注意数组的多次利用  
-Flatten Binary Tree to Linked List	树的结构重建，dfs，好题	***  
-Generate Parentheses		简单递归  
-Gray Code			格雷码 规律 定义  
+	   
 Implement strStr()		KMP				***   
 Insert Interval			区间合并，要严重注意细节	***  
 Integer to Roman		数字翻译成罗马数字  

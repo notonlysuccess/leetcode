@@ -1,20 +1,24 @@
 class Solution {
+private:
+    void dfs(vector<string> &vec , string &str , int left,int right,int n) {
+        if (right == n) {
+            vec.push_back(str);
+            return ;
+        }
+        if (left < n) {
+            str[left+right] = '(';
+            dfs(vec , str , left + 1 , right , n);
+        }
+        if (right < n && right < left) {
+            str[left+right] = ')';
+            dfs(vec , str , left , right + 1 , n);
+        }
+    }
 public:
-    void dfs(int left,int right,int n,vector<string> &ret,const string &ans) {
-		if (right == n) {
-			ret.push_back(ans);
-			return ;
-		}
-		if (left < n) {
-			dfs(left + 1 , right , n , ret , ans + '(');
-		}
-		if (right < left) {
-			dfs(left , right + 1 , n , ret , ans + ')');
-		}
-	}
-	vector<string> generateParenthesis(int n) {
-		vector<string> ret;
-		dfs(0 , 0 , n , ret , "");
-		return ret;
-	}
+    vector<string> generateParenthesis(int n) {
+        vector<string> vec;
+        string str(2*n , ' ');
+        dfs(vec , str , 0 , 0 , n);
+        return vec;
+    }
 };

@@ -8,18 +8,25 @@
  * };
  */
 class Solution {
+private:
+    void build(TreeNode *root , TreeNode *&last) {
+        if (root == NULL) {
+            return ;
+        }
+        last = root;
+        if (root->left) {
+            build(root->left , last);
+            last->right = root->right;
+        }
+        build(root->right , last);
+        if (root->left) {
+            root->right = root->left;
+            root->left = NULL;
+        }
+    }
 public:
-	TreeNode *rebuild(TreeNode *root,TreeNode *father) {
-		if (root == NULL) return father;
-		if (father != NULL) father->right = root;
-		TreeNode *left = root->left;
-		TreeNode *right = root->right;
-		root->left = NULL;
-		root->right = NULL;
-		TreeNode *last = rebuild(left , root);
-		return rebuild(right , last);
-	}
-	void flatten(TreeNode *root) {
-		rebuild(root , NULL);
-	}
+    void flatten(TreeNode *root) {
+        TreeNode *last = NULL;
+        build(root , last);
+    }
 };

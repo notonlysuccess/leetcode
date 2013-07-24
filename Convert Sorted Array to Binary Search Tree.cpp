@@ -8,16 +8,19 @@
  * };
  */
 class Solution {
+private:
+    TreeNode *build(vector<int> &num,int lo,int hi) {
+        if (lo > hi) {
+            return NULL;
+        }
+        int mid = (lo + hi) >> 1;
+        TreeNode *root = new TreeNode(num[mid]);
+        root->left = build(num,lo,mid-1);
+        root->right = build(num,mid+1,hi);
+        return root;
+    }
 public:
-	TreeNode *build(vector<int> &num,int l,int r) {
-		if (l > r) return NULL;
-		int mid = (l + r) >> 1;
-		TreeNode *root = new TreeNode(num[mid]);
-		root->left = build(num , l , mid - 1);
-		root->right = build(num , mid + 1 , r);
-		return root;
-	}
-	TreeNode *sortedArrayToBST(vector<int> &num) {
-		return build(num , 0 , num.size() - 1);
-	}
+    TreeNode *sortedArrayToBST(vector<int> &num) {
+        return build(num , 0 , num.size() - 1);
+    }
 };

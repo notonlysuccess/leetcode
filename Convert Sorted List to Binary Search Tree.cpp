@@ -16,22 +16,23 @@
  * };
  */
 class Solution {
+private:
+    int getLength(ListNode *head) {
+        return head == NULL ? 0 : 1 + getLength(head->next);
+    }
+    TreeNode *build(ListNode *&head, int length) {
+        if (length == 0) {
+            return NULL;
+        }
+        TreeNode *root = new TreeNode(0);
+        root->left = build(head , length/2);
+        root->val = head->val;
+        head = head->next;
+        root->right = build(head , length - 1 - length/2);
+        return root;
+    }
 public:
-    TreeNode *build(ListNode *&head,int l) {
-    	if (l == 0) return NULL;
-		TreeNode *root = new TreeNode(0);
-		root->left = build(head , l>>1);
-		root->val = head->val;
-		head = head->next;
-		root->right = build(head , l - 1 - (l>>1));
-		return root;
-	}
-	int getLength(ListNode *head) {
-		int ret = 0;
-		for (; head ; head = head->next , ret ++);
-		return ret;
-	}
-	TreeNode *sortedListToBST(ListNode *head) {
-		return build(head , getLength(head));
-	}
+    TreeNode *sortedListToBST(ListNode *head) {
+        return build(head , getLength(head));
+    }
 };
