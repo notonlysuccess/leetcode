@@ -169,6 +169,65 @@
 <td>格雷码 公式i^(i>>1)</td>
 <td>36ms</td>
 </tr>
+<tr>
+<td><b>Implement strStr()</b></td>
+<td>KMP</td>
+<td>28ms</td>
+</tr>
+<tr>
+<td><b>Insert Interval</b></td>
+<td>一个区间和一组有序区间合并</td>
+<td>72ms</td>
+</tr>
+<tr>
+<td>Integer to Roman</td>
+<td>数字翻译成罗马数字</td>
+<td>128ms</td>
+</tr>
+<tr>
+<td>Interleaving String</td>
+<td>看s1和s2能不能合并成s3</td>
+<td>16ms</td>
+</tr>
+<tr>
+<td><b>Jump Game II</b></td>
+<td>每个位子可以跳到val远处,问起点到终点的最小步数</td>
+<td>52ms</td>
+</tr>
+<tr>
+<td>Jump Game</td>
+<td>每个位子可以跳到val远处,问起点能不能跳到终点</td>
+<td>52ms</td>
+</tr>
+<tr>
+<td rowspan="2"><b>Largest Rectangle in Histogram</b></td>
+<td>经典问题,最大矩形 left+right</td>
+<td>100ms</td>
+</tr>
+<tr>
+<td>用一个递增栈来做</td>
+<td>100ms</td>
+</tr>
+<tr>
+<td><b>Length of Last Word</b></td>
+<td>最后一个词的长度 优美解法</td>
+<td>32ms</td>
+</tr>
+<tr>
+<td>Letter Combinations of a Phone Number</td>
+<td>递归 手机号码和字符的组合数</td>
+<td>12ms</td>
+</tr>
+<tr>
+<td>Longest Common Prefix</td>
+<td>一组字符串的最长相同前缀</td>
+<td>24ms</td>
+</tr>
+<tr>
+<td><b>Longest Consecutive Sequence</b></td>
+<td>乱序数组中最长的连续数字 用unordered_set O(n)</td>
+<td>64ms</td>
+</tr>
 
 <tr>
 <td></td>
@@ -176,18 +235,7 @@
 <td></td>
 </tr>
 </table>
-	   
-Implement strStr()		KMP				***   
-Insert Interval			区间合并，要严重注意细节	***  
-Integer to Roman		数字翻译成罗马数字  
-Interleaving String		看s1和s2能不能合并成s3，不是子串，审清细节题  
-Jump Game			简单遍历，注意细节  
-Jump Game2			DP				***  
-Largest Rectangle in Histogram	经典DP	可以用栈巧妙解决	***   
-Length of Last Word		基础题  
-Letter Combinations of a Phone Number	简单递归  
-Longest Common Prefix		简单题  
-Longest Consecutive Sequence	unordered_map			***  
+	       
 Longest Palindromic Substring	最长回文  
 Longest Substring Without Repeating Characters	最长不重复  
 Longest Valid Parentheses	最长合法括号数，注意边界	***  

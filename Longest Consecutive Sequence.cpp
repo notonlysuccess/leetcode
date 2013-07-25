@@ -1,32 +1,25 @@
 class Solution {
 public:
-	int longestConsecutive(vector<int> &num) {
-		unordered_map<int,int> mp;
-		vector<bool> visited(num.size() , false);
-		for (int i = 0 ; i < num.size() ; i ++) {
-			mp[ num[i] ] = i;
-		}
-		int ret = 0;
-		for (int i = 0 ; i < num.size() ; i ++) {
-			if (visited[i]) continue;
-			visited[i] = true;
-			int count = 1;
-			int val = num[i];
-			unordered_map<int,int>::iterator iter = mp.find(--val);
-			while (iter != mp.end()) {
-				visited[iter->second] = true;
-				count ++;
-				iter = mp.find(--val);
-			}
-			val = num[i];
-			iter = mp.find(++val);
-			while (iter != mp.end()) {
-				visited[iter->second] = true;
-				count ++;
-				iter = mp.find(++val);
-			}
-			ret = max(ret , count);
-		}
-		return ret;
-	}
+    int longestConsecutive(vector<int> &num) {
+        unordered_set<int> dig;
+        for (int i = 0 ; i < num.size() ; i ++) {
+            dig.insert(num[i]);
+        }
+        int ret = 0;
+        for (int i = 0 ; i < num.size() ; i ++) {
+            if (dig.find(num[i]) != dig.end()) {
+                dig.erase(num[i]);
+                int lo = num[i] - 1;
+                while (dig.find(lo) != dig.end()) {
+                    dig.erase(lo--);
+                }
+                int hi = num[i] + 1;
+                while (dig.find(hi) != dig.end()) {
+                    dig.erase(hi++);
+                }
+                ret = max(ret , hi - lo - 1);
+            }
+        }
+        return ret;
+    }
 };

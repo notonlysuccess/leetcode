@@ -9,28 +9,21 @@
  */
 class Solution {
 public:
-	vector<Interval> insert(vector<Interval> &intervals, Interval newInterval) {
-		vector<Interval>::iterator iter = intervals.begin();
-		while ( iter != intervals.end() ) {
-			if (iter->start <= newInterval.start && newInterval.end <= iter->end) {
-				return intervals;
-			}
-			if (iter->start <= newInterval.start && newInterval.start <= iter->end) {
-				newInterval.start = iter->start;
-				iter = intervals.erase(iter);
-			} else if (iter->start <= newInterval.end && newInterval.end <= iter->end) {
-				newInterval.end = iter->end;
-				iter = intervals.erase(iter);
-			} else if (newInterval.start <= iter->start && iter->end <= newInterval.end) {
-				intervals.erase(iter);
-			} else if (iter->start > newInterval.end) {
-				intervals.insert(iter , newInterval);
-				return intervals;
-			} else {
-				iter ++;
-			}
- 		}
- 		intervals.insert(intervals.end() , newInterval);
-		return intervals;
-	}
+    vector<Interval> insert(vector<Interval> &intervals, Interval newInterval) {
+        vector<Interval> ret;
+        for (auto iter = intervals.begin() ; iter != intervals.end() ; iter ++) {
+            if (iter->end < newInterval.start) {
+                ret.push_back(*iter);
+            } else if (iter->start > newInterval.end) {
+                ret.push_back(newInterval);
+                ret.insert(ret.end() , iter , intervals.end());
+                return ret;
+            } else {
+                newInterval.start = min(newInterval.start , iter->start);
+                newInterval.end = max(newInterval.end , iter->end);
+            }
+        } 
+        ret.push_back(newInterval);
+        return ret;
+    }
 };
