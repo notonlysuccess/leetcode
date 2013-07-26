@@ -304,18 +304,48 @@
 <td>36ms</td>
 </tr>
 <tr>
+<td><b>N-Queens II</b></td>
+<td>输出方案数 位运算</td>
+<td>60ms</td>
+</tr>
+<tr>
+<td>N_Queens</td>
+<td>输出方案 同上</td>
+<td>16ms</td>
+</tr>
+<tr>
+<td><b>Next Permutation</b></td>
+<td>下一个组合数，要求O(n)</td>
+<td>68ms</td>
+</tr>
+<tr>
+<td>Palindrome Number</td>
+<td>判断数字回文 O(1)空间</td>
+<td>288ms</td>
+</tr>
+<tr>
+<td>Palindrome Partitioning II</td>
+<td>最小几刀将一个串切成全部都是回文串</td>
+<td>188ms</td>
+</tr>
+<tr>
+<td>Palindrome Partitioning</td>
+<td>将一个串切分成全部都是回文串</td>
+<td>52ms</td>
+</tr>
+<tr>
+<td>Partition List</td>
+<td>将链表中小于x的归到左边,并保持原顺序不变</td>
+<td>48ms</td>
+</tr>
+
+<tr>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 </table>
-Next Permutation		下一个组合数，要求O(n)并如二分一般不	用思考就可以闭着眼睛写出来 ***  
-N-Queens II			N皇后问题，用位运算快速解决  
-N-Queens			N皇后问题，输出方案  
-Palindrome Number		回文数字  
-Palindrome Partitioning		回文串+递归  
-Palindrome Partitioning II	回文串+递归  
-Partition List			指针操作，一定要注意细节  
+
 Path Sum			树的路径和  
 Path Sum II			树的路径和 输出  
 Permutation Sequence		第K个组合数  

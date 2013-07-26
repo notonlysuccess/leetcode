@@ -9,35 +9,20 @@
 class Solution {
 public:
     ListNode *partition(ListNode *head, int x) {
-        ListNode *less, *greater;
-        ListNode *startLess = NULL, *startGreater = NULL;
-        while (head) {
+        ListNode *h1 = new ListNode(0);
+        ListNode *h2 = new ListNode(0);
+        ListNode *t1 = h1 , *t2 = h2;
+        for ( ; head ; head = head->next) {
             if (head->val < x) {
-                if (startLess == NULL) {
-                    startLess = head;
-                    less = startLess;
-                } else {
-                    less->next = head;
-                    less = head;
-                }
+                t1->next = head;
+                t1 = head;
             } else {
-                if (startGreater == NULL) {
-                    startGreater = head;
-                    greater = startGreater;
-                } else {
-                    greater->next = head;
-                    greater = head;
-                }
+                t2->next = head;
+                t2 = head;
             }
-            head = head->next;
         }
-        if (startLess == NULL) {
-            return startGreater;
-        } else if (startGreater == NULL) {
-            return startLess;
-        }
-        less->next = startGreater;
-        greater->next = NULL;
-        return startLess;
+        t1->next = h2->next;
+        t2->next = NULL;
+        return h1->next;
     }
 };
