@@ -9,31 +9,25 @@
  */
 class Solution {
 public:
-    void Merge(vector<Interval> &ret , Interval &interval) {
-        for (int i = 0 ; i < ret.size() ; i ++) {
-            if (ret[i].start <= interval.start && interval.start <= ret[i].end) {
-                interval.start = ret[i].start;
-            }
-            if (ret[i].start <= interval.end && interval.end <= ret[i].end) {
-                interval.end = ret[i].end;
-            }
-            if (interval.start <= ret[i].start && ret[i].end <= interval.end) {
-                ret.erase(ret.begin() + i);
-                i --;
-                continue;
-            }
-            if (interval.end <= ret[i].start) {
-                ret.insert(ret.begin() + i , interval);
-                return ;
-            }
-        }
-        ret.push_back(interval);
-    }
-    
     vector<Interval> merge(vector<Interval> &intervals) {
-        vector<Interval> ret;
+        vector<pair<int,int> > vec;
         for (int i = 0 ; i < intervals.size() ; i ++) {
-            Merge(ret , intervals[i]);
+            vec.push_back(make_pair(intervals[i].start , -1));
+            vec.push_back(make_pair(intervals[i].end , 1));
+        }
+        sort(vec.begin() , vec.end());
+        stack<int> st;
+        vector<Interval> ret;
+        for (int i = 0 ; i < vec.size() ; i ++) {
+            if (vec[i].second == -1) {
+                st.push(vec[i].first);
+            } else {
+                int val = st.top();
+                st.pop();
+                if (st.empty()) {
+                    ret.push_back(Interval(val , vec[i].first));
+                }
+            }
         }
         return ret;
     }

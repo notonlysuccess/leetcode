@@ -152,7 +152,7 @@
 <tr>
 <td><b>First Missing Positive<b/></td>
 <td>找到最小不存在的正整数,O(1)空间</td>
-<td></td>
+<td>20ms</td>
 </tr>
 <tr>
 <td><b>Flatten Binary Tree to Linked List</b></td>
@@ -228,27 +228,87 @@
 <td>乱序数组中最长的连续数字 用unordered_set O(n)</td>
 <td>64ms</td>
 </tr>
-
+<tr>
+<td><b>Longest Palindromic Substring</b></td>
+<td>最长回文 O(n)</td>
+<td>40ms</td>
+</tr>
+<tr>
+<td>Longest Substring Without Repeating Characters</td>
+<td>字符串中最长不重复的字符 纯O(n) 两种做法,比较优美</td>
+<td>50ms</td>
+</tr>
+<tr>
+<td><b>Longest Valid Parentheses</b></td>
+<td>最长合法圆括号数</td>
+<td>40ms</td>
+</tr>
+<tr>
+<td>Maximal Rectangle</td>
+<td>二维的Largest Rectangle in Histogram</td>
+<td>72ms</td>
+</tr>
+<tr>
+<td>Maximum Depth of Binary Tree</td>
+<td>树的最长深度</td>
+<td>44ms</td>
+</tr>
+<tr>
+<td>Maximum Subarray</td>
+<td>最大子序列</td>
+<td>44ms</td>
+</tr>
+<tr>
+<td><b>Median of Two Sorted Arrays</b></td>
+<td>两个排序数组的中位数</td>
+<td>192ms</td>
+</tr>
+<tr>
+<td><b>Merge Intervals</b></td>
+<td>合并区间 O(nlogn)</td>
+<td>88ms</td>
+</tr>
+<tr>
+<td><b>Merge k Sorted Lists</b></td>
+<td>合并k个有序链表 O(nlogm) 注意写比较器</td>
+<td>84ms</td>
+</tr>
+<tr>
+<td>Merge Sorted Array</td>
+<td>将有序数组A,B合并到A中,O(1)内存,倒序</td>
+<td>32ms</td>
+</tr>
+<tr>
+<td>Merge Two Sorted Lists</td>
+<td>合并两个有序链表,新链表要用原链表拼接</td>
+<td>60ms</td>
+</tr>
+<tr>
+<td>Minimum Depth of Binary Tree</td>
+<td>根节点到最近的叶子节点的距离</td>
+<td>52ms</td>
+</tr>
+<tr>
+<td>Minimum Path Sum</td>
+<td>从左上角向下向右走到右下角的最短距离 简单二维DP</td>
+<td>76ms</td>
+</tr>
+<tr>
+<td><b>Minimum Window Substring</b></td>
+<td>从S中找到包含T所有字符的最小子串 , O(n)</td>
+<td>60ms</td>
+</tr>
+<tr>
+<td>Multiply Strings</td>
+<td>大数乘法</td>
+<td>36ms</td>
+</tr>
 <tr>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 </table>
-	       
-Longest Palindromic Substring	最长回文  
-Longest Substring Without Repeating Characters	最长不重复  
-Longest Valid Parentheses	最长合法括号数，注意边界	***  
-Maximal Rectangle		同Largest Rectangle in Histogram ***  
-Maximum Depth of Binary Tree	树的最长深度  
-Maximum Subarray		最大子序列  
-Merge Intervals			合并区间  
-Merge Sorted Array		合并两个有序数组，不用第三个数组  
-Merge Two Sorted Lists		合并两个有序链表，不用申请内存  
-Minimum Depth of Binary Tree	树的最小深度，注意定义  
-Minimum Path Sum		简单二维DP  
-Minimum Window Substring	二分+统计  
-Multiply Strings		大数乘法  
 Next Permutation		下一个组合数，要求O(n)并如二分一般不	用思考就可以闭着眼睛写出来 ***  
 N-Queens II			N皇后问题，用位运算快速解决  
 N-Queens			N皇后问题，输出方案  

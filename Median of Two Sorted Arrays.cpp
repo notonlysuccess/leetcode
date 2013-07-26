@@ -10,7 +10,6 @@ private:
         if (mid > median) {
             return search(A , B , lo , mid - 1 , m , n);
         }
-        int midb = median - mid - 1;
         if (midb >= n) {
             return search(A , B , mid + 1 , hi , m , n);
         }

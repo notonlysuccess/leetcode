@@ -1,14 +1,12 @@
 class Solution {
 public:
-	int maxSubArray(int A[], int n) {
-		int sum = 0;
-		int ret = 0x80000000;
-		for (int i = 0 ; i < n ; i ++) {
-			ret = max(ret , A[i]);
-			sum += A[i];
-			ret = max(ret , sum);
-			if (sum < 0) sum = 0;
-		}
-		return ret;
-	}
+    int maxSubArray(int A[], int n) {
+        if (n == 0) return 0;
+        int ret = A[0] , sum = A[0];
+        for (int i = 1 ; i < n ; i ++) {
+            sum = sum < 0 ? A[i] : sum + A[i];
+            ret = max(ret , sum);
+        }
+        return ret;
+    }
 };
