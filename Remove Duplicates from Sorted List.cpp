@@ -20,6 +20,6 @@ public:
                 last = p;
             }
         }
-        return head;
+        return head; 
     }
 };

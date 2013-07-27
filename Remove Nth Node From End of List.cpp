@@ -23,4 +23,4 @@ public:
         remove(head , n);
         return head;
     }
-};
+}; 

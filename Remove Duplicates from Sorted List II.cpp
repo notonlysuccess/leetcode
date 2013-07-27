@@ -24,5 +24,5 @@ public:
         }
         last->next = NULL;
         return ret->next;
-    }
+    } 
 };
