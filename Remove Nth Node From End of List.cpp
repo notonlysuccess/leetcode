@@ -7,19 +7,20 @@
  * };
  */
 class Solution {
+private:
+    int remove(ListNode *&head, int n) {
+        if (head == NULL) {
+            return NULL;
+        }
+        int m = remove(head->next , n) + 1;
+        if (n == m) {
+            head = head->next;
+        }
+        return m;
+    }
 public:
     ListNode *removeNthFromEnd(ListNode *head, int n) {
-        ListNode *first = head;
-        while (n --) {
-            first = first->next;
-        }
-        if (first == NULL) return head->next;
-        ListNode *second = head;
-        while (first->next) {
-            first = first->next;
-            second = second->next;
-        }
-        second->next = second->next->next;
+        remove(head , n);
         return head;
     }
 };

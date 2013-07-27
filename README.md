@@ -398,6 +398,56 @@
 <td>树中两个元素错位，要求修复并用O(1)的空间，前序遍历记录上一个节点</td>
 <td>308ms</td>
 </tr>
+<tr>
+<td><b>Regular Expression Matching</b></td>
+<td>正则表达式.*匹配</td>
+<td>48ms</td>
+</tr>
+<tr>
+<td>Remove Duplicates from Sorted Array II</td>
+<td>使有序数组中只保留最多两份相同数字</td>
+<td>92ms</td>
+</tr>
+<tr>
+<td>Remove Duplicates from Sorted Array</td>
+<td>把有序数组中相同的数字去掉</td>
+<td>68ms</td>
+</tr>
+<tr>
+<td><b>Remove Duplicates from Sorted List II</b></td>
+<td>有序链表中将有重复的数字全部去掉</td>
+<td>68ms</td>
+</tr>
+<tr>
+<td>Remove Duplicates from Sorted List</td>
+<td>有序链表去重</td>
+<td>80ms</td>
+</tr>
+<tr>
+<td>Remove Element</td>
+<td>给一个元素和一个数组,把这个数组中等于这个元素的去掉</td>
+<td>20ms</td>
+</tr>
+<tr>
+<td><b>Remove Nth Node From End of List</b></td>
+<td>把指针的倒数第N个节点去掉</td>
+<td>20ms</td>
+</tr>
+<tr>
+<td><b>Restore IP Addresses</b></td>
+<td>一串数字,转成IP地址</td>
+<td>24ms</td>
+</tr>
+<tr>
+<td>Reverse Integer</td>
+<td>翻转int</td>
+<td>32ms</td>
+</tr>
+<tr>
+<td><b>Reverse Linked List II</b></td>
+<td>链表n到m个数字翻转</td>
+<td>20ms</td>
+</tr>
 
 <tr>
 <td></td>
@@ -405,9 +455,7 @@
 <td></td>
 </tr>
 </table>
-
-		 ***  
-Remove Duplicates from Sorted Array	对有序数组去重  
+ 
 Unique Binary Search Trees II		把所有的二叉搜索树构造出并保存起来	 ***  
 Valid Number				有限自动机				 ***  
 Word Ladder II				记录所有路径				 ***  

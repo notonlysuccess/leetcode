@@ -1,9 +1,9 @@
 class Solution {
 public:
-    int removeDuplicates(int A[], int n) {
+    int removeElement(int A[], int n, int elem) {
         int m = 0;
         for (int i = 0 ; i < n ; i ++) {
-            if (m < 2 || A[i] != A[m-1] || A[i] != A[m-2]) {
+            if (A[i] != elem) {
                 A[m++] = A[i];
             }
         }
