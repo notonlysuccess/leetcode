@@ -9,7 +9,7 @@ private:
             return ;
         }
         for (int i = 0 ; i < num.size() ; i ++) {
-            if (!used[i]) {
+            if (!used[i] && (i == 0 || num[i] != num[i-1] || used[i-1])) {
                 used[i] = true;
                 per[id] = num[i];
                 dfs(id + 1 , num);
@@ -18,7 +18,7 @@ private:
         }
     }
 public:
-    vector<vector<int> > permute(vector<int> &num) {
+    vector<vector<int> > permuteUnique(vector<int> &num) {
         sort(num.begin() , num.end());
         ret.clear();
         per.resize(num.size());

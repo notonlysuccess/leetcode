@@ -5,10 +5,9 @@ public:
             return pow(1/x , -n);
         }
         double ret = 1;
-        while (n) {
+        for ( ; n ; n /= 2) {
             if (n&1) ret *= x;
             x *= x;
-            n /= 2;
         }
         return 1/ret;
     }

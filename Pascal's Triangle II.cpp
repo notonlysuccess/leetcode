@@ -1,10 +1,9 @@
 class Solution {
 public:
     vector<int> getRow(int rowIndex) {
-        vector<int> ret;
-        for (int i = 0 ; i <= rowIndex ; i ++) {
-            ret.push_back(1);
-            for (int j = i - 1 ; j > 0 ; j --) {
+        vector<int> ret(rowIndex+1 , 1);
+        for (int i = 2 ; i <= rowIndex ; i ++) {
+            for (int j = i-1 ; j > 0 ; j --) {
                 ret[j] += ret[j-1];
             }
         }

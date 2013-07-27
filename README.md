@@ -338,6 +338,66 @@
 <td>将链表中小于x的归到左边,并保持原顺序不变</td>
 <td>48ms</td>
 </tr>
+<tr>
+<td>Pascal's Triangle II</td>
+<td>杨辉三角 O(n)空间输出第n行</td>
+<td>8ms</td>
+</tr>
+<tr>
+<td>Pascal's Triangle</td>
+<td>杨辉三角</td>
+<td>16ms</td>
+</tr>
+<tr>
+<td>Path Sum II</td>
+<td>输出从根节点到叶子距离为sum的path</td>
+<td>72ms</td>
+</tr>
+<tr>
+<td>Path Sum</td>
+<td>跟加点到叶子的距离是否有和为sum</td>
+<td>64ms</td>
+</tr>
+<tr>
+<td><b>Permutation Sequence</b></td>
+<td>第K个组合数</td>
+<td>12ms</td>
+</tr>
+<tr>
+<td>Permutations II</td>
+<td>有相同数字的组合数</td>
+<td>164ms</td>
+</tr>
+<tr>
+<td>Permutations</td>
+<td>不同数字的组合数</td>
+<td>84ms</td>
+</tr>
+<tr>
+<td>Plus One</td>
+<td>大数+1</td>
+<td>20ms</td>
+</tr>
+<tr>
+<td><b>Populating Next Right Pointers in Each Node II</b></td>
+<td>任意二叉树的邻指针 用O(1)的空间bfs</td>
+<td>160ms</td>
+</tr>
+<tr>
+<td>Populating Next Right Pointers in Each Node</td>
+<td>完全二叉树的邻指针</td>
+<td>128ms</td>
+</tr>
+<tr>
+<td><b>Pow(x, n)</b></td>
+<td>模拟pow(double,int) 注意n的int范围,正负</td>
+<td>20ms</td>
+</tr>
+<tr>
+<td><b>Recover Binary Search Tree</b></td>
+<td>树中两个元素错位，要求修复并用O(1)的空间，前序遍历记录上一个节点</td>
+<td>308ms</td>
+</tr>
 
 <tr>
 <td></td>
@@ -346,15 +406,7 @@
 </tr>
 </table>
 
-Path Sum			树的路径和  
-Path Sum II			树的路径和 输出  
-Permutation Sequence		第K个组合数  
-Permutations II			组合数，用重复数字  
-Permutations			组合数  
-Plus One			模拟加法  
-Populating Next Right Pointers in Each Node II	二叉树的邻居指针 很nice的题目			***  
-Populating Next Right Pointers in Each Node	完全二叉树的邻居指针  
-Recover Binary Search Tree		树中两个元素错位，要求修复并用O(1)的空间，前序遍历记录上一个节点 ***  
+		 ***  
 Remove Duplicates from Sorted Array	对有序数组去重  
 Unique Binary Search Trees II		把所有的二叉搜索树构造出并保存起来	 ***  
 Valid Number				有限自动机				 ***  

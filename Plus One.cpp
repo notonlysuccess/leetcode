@@ -1,20 +1,16 @@
 class Solution {
 public:
     vector<int> plusOne(vector<int> &digits) {
-        reverse(digits.begin() , digits.end());
         bool carry = true;
-        for (int i = 0 ; i < digits.size() && carry; i ++) {
+        for (int i = digits.size() - 1 ; carry && i >= 0 ; i --) {
             digits[i] ++;
-            if (digits[i] == 10) {
-                digits[i] = 0;
-            } else {
-                carry = false;
-            }
+            carry = digits[i] > 9;
+            digits[i] %= 10;
         }
         if (carry) {
-            digits.push_back(1);
+            digits[0] = 1;
+            digits.push_back(0);
         }
-        reverse(digits.begin() , digits.end());
         return digits;
     }
 };

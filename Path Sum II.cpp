@@ -8,31 +8,28 @@
  * };
  */
 class Solution {
-public:
-    void dfs(TreeNode *root,int sum , vector<vector<int> > &ret , vector<int> &temp) {
+private:
+    vector<vector<int> > ret;
+    vector<int> path;
+    void dfs(TreeNode *root ,int sum) {
+        if (!root) {
+            return ;
+        }
+        path.push_back(root->val);
         if (root->left == NULL && root->right == NULL) {
             if (root->val == sum) {
-                temp.push_back(root->val);
-                ret.push_back(temp);
-                temp.pop_back();
+                ret.push_back(path);
             }
         }
-        if (root->left) {
-            temp.push_back(root->val);
-            dfs(root->left , sum - root->val , ret , temp);
-            temp.pop_back();
-        }
-        if (root->right) {
-            temp.push_back(root->val);
-            dfs(root->right , sum - root->val , ret , temp);
-            temp.pop_back();
-        }
+        dfs(root->left , sum - root->val);
+        dfs(root->right , sum - root->val);
+        path.pop_back();
     }
+public:
     vector<vector<int> > pathSum(TreeNode *root, int sum) {
-        vector<vector<int> > ret;
-        if (root == NULL) return ret;
-        vector<int> temp;
-        dfs(root, sum , ret , temp);
+        ret.clear();
+        path.clear();
+        dfs(root , sum);
         return ret;
     }
 };
