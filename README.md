@@ -448,6 +448,61 @@
 <td>链表n到m个数字翻转</td>
 <td>20ms</td>
 </tr>
+<tr>
+<td><b>Reverse Nodes in k-Group</b></td>
+<td>将链表以k个一组翻转</td>
+<td>144ms</td>
+</tr>
+<tr>
+<td>Roman to Integer</td>
+<td>罗马数字转阿拉伯数字</td>
+<td>172ms</td>
+</tr>
+<tr>
+<td>Rotate Image</td>
+<td>顺时针翻转n*n矩阵,in-place</td>
+<td>32ms</td>
+</tr>
+<tr>
+<td>Rotate List</td>
+<td>将链表右移k位</td>
+<td>72ms</td>
+</tr>
+<tr>
+<td>Same Tree</td>
+<td>判断两个二叉树是否相等</td>
+<td>12ms</td>
+</tr>
+<tr>
+<td>Scramble String</td>
+<td>判断一个字符串能否以二叉树选择成另外一个,O(n^3)空间,O(n^4)时间</td>
+<td>76ms</td>
+</tr>
+<tr>
+<td>Search a 2D Matrix</td>
+<td>在n*m的有序矩阵中找一个数</td>
+<td>72ms</td>
+</tr>
+<tr>
+<td><b>Search for a Range</b></td>
+<td>lower_bound和upper_bound</td>
+<td>68ms</td>
+</tr>
+<tr>
+<td>Search in Rotated Sorted Array II</td>
+<td>同上题,不过有有重复数字,极限情况会退化成O(n)</td>
+<td>56ms</td>
+</tr>
+<tr>
+<td><b>Search in Rotated Sorted Array</b></td>
+<td>在旋转过的且唯一的有序数组中二分查找</td>
+<td>24ms</td>
+</tr>
+<tr>
+<td>Search Insert Position</td>
+<td>lower_bound</td>
+<td>40ms</td>
+</tr>
 
 <tr>
 <td></td>

@@ -4,24 +4,26 @@ public:
         int lo = 0;
         int hi = n - 1;
         while (lo <= hi) {
-            int mid = lo + (hi - lo) / 2;
+            int mid = (lo + hi) >> 1;
             if (A[mid] == target) {
                 return true;
             }
-            if (A[lo] < A[mid]) {
-                if (A[lo] <= target && target <= A[mid]) {
-                    hi = mid - 1;
-                } else {
-                    lo = mid + 1;
+            if (A[mid] == A[lo]) {
+                while (A[mid] == A[lo]) {
+                    lo ++;
                 }
-            } else if (A[lo] > A[mid]){
-                if (A[lo] <= target || target <= A[mid]) {
+            } else if (A[mid] > A[lo]) {
+                if (A[lo] <= target && target < A[mid]) {
                     hi = mid - 1;
                 } else {
                     lo = mid + 1;
                 }
             } else {
-                lo ++;
+                if (A[mid] < target && target <= A[hi]) {
+                    lo = mid + 1;
+                } else {
+                    hi = mid - 1;
+                }
             }
         }
         return false;

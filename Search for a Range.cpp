@@ -1,32 +1,34 @@
 class Solution {
+private:
+    int lower_bound(int a[],int lo,int hi,int target) {
+        while (lo <= hi) {
+            int mid = (lo + hi) >> 1;
+            if (a[mid] < target) {
+                lo = mid + 1;
+            } else {
+                hi = mid - 1;
+            }
+        }
+        return hi + 1;
+    }
+    int upper_bound(int a[],int lo,int hi,int target) {
+        while (lo <= hi) {
+            int mid = (lo + hi) >> 1;
+            if (a[mid] > target) {
+                hi = mid - 1;
+            } else {
+                lo = mid + 1;
+            }
+        }
+        return lo;
+    }
 public:
     vector<int> searchRange(int A[], int n, int target) {
-        vector<int> ret;
-        int lo = 0;
-        int hi = n - 1;
-        while (lo <= hi) {
-            int mid = (lo + hi) >> 1;
-            if (A[mid] < target) {
-                lo = mid + 1;
-            } else {
-                hi = mid - 1;
-            }
+        int lower = lower_bound(A , 0 , n - 1 , target);
+        int upper = upper_bound(A , 0 , n - 1 , target);
+        if (lower > upper - 1) {
+            return vector<int>({-1,-1});
         }
-        if (lo == n || target != A[lo]) {
-            return vector<int>(2,-1);
-        }
-        ret.push_back(lo);
-        lo = 0;
-        hi = n - 1;
-        while (lo <= hi) {
-            int mid = (lo + hi) >> 1;
-            if (A[mid] > target) {
-                hi = mid - 1;
-            } else {
-                lo = mid + 1;
-            }
-        }
-        ret.push_back(hi);
-        return ret;
+        return vector<int>({lower, upper - 1});
     }
 };
