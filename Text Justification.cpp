@@ -1,51 +1,42 @@
 class Solution {
-public:
-    string gen(vector<string> &words,int L,int sum,int count,int index,bool lastLine) {
-        string str;
-        if (count == 0 || lastLine) {
-            for (int i = 0 ; i <= count ; i ++) {
-                if (i) str += " ";
-                str += words[index - count - 1 + i];
+private:
+    string line(int s, int e, int L, bool last, vector<string> &word) {
+        string ret;
+        if (s == e || last) {
+            for (int i = s ; i < e ; i ++) {
+                ret += word[i] + " ";
             }
-            for (int i = str.length() ; i < L ; i ++) {
-                str += " ";
-            }
+            ret += word[e];
         } else {
-            int spaces = L - sum;
-            int div = spaces / count;
-            int rem = spaces % count;
-            for (int i = 0 ; i <= count ; i ++) {
-                if (i) {
-                    str += string(div , ' ');
-                    if (i <= rem) {
-                        str += ' ';
-                    }
-                }
-                str += words[index - count - 1 + i];
+            int remain = L;
+            for (int i = s ; i <= e ; i ++) {
+                remain -= word[i].length();
             }
+            int div = remain / (e - s);
+            int more = remain % (e - s);
+            for (int i = s ; i < e ; i ++) {
+                ret += word[i] + string(div + (i < s + more) , ' ');
+            }
+            ret += word[e];
         }
-        return str;
+        if (ret.length() < L) {
+            ret += string(L - ret.length() , ' ');
+        }
+        return ret;
     }
+public:
     vector<string> fullJustify(vector<string> &words, int L) {
         vector<string> ret;
-        if (L == 0) {
-            return vector<string>(1,"");
-        }
-        int sum = 0;
-        int count = 0;
-        for (int i = 0 ; i < words.size() ;i ++) {
-            sum += words[i].length();
-            if (sum + count > L) {
-                ret.push_back( gen(words , L , sum - words[i].length() , count - 1 , i , false) );
-                sum = words[i].length();
-                count = 1;
-            } else {
-                count ++;
+        int s = 0 , sum = 0;
+        for (int i = 0 ; i < words.size() ; i ++) {
+            if (sum + words[i].length() > L) {
+                ret.push_back(line(s , i - 1 , L , false , words));
+                sum = 0;
+                s = i;
             }
+            sum += words[i].length() + 1;
         }
-        if (count) {
-            ret.push_back( gen(words , L , sum , count - 1 , words.size() , true) );
-        }
+        ret.push_back(line(s , words.size() - 1 , L , true , words));
         return ret;
     }
 };

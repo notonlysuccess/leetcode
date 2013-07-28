@@ -558,6 +558,61 @@
 <td>解数独,唯一解,dfs</td>
 <td>24ms</td>
 </tr>
+<tr>
+<td>Sum Root to Leaf Numbers</td>
+<td>二叉树根到叶子的组成的数字的和</td>
+<td>24ms</td>
+</tr>
+<tr>
+<td>Surrounded Regions</td>
+<td>将被X包围的O变成X</td>
+<td>48ms</td>
+</tr>
+<tr>
+<td>Swap Nodes in Pairs</td>
+<td>交换链表奇偶的节点</td>
+<td>20ms</td>
+</tr>
+<tr>
+<td>Symmetric Tree</td>
+<td>判断树是否对称</td>
+<td>24ms</td>
+</tr>
+<tr>
+<td>Text Justification</td>
+<td>文字排版</td>
+<td>12ms</td>
+</tr>
+<tr>
+<td><b>Trapping Rain Water</b></td>
+<td>一个数组代表木条的高度,问这组容器能积多少水 , 一次循环,两边向中间</td>
+<td>56ms</td>
+</tr>
+<tr>
+<td>Triangle</td>
+<td>数塔</td>
+<td>44ms</td>
+</tr>
+<tr>
+<td>Two Sum</td>
+<td>找两个数字和等于target</td>
+<td>28ms</td>
+</tr>
+<tr>
+<td><b>Unique Binary Search Trees II</b></td>
+<td>输出BST的所有方案</td>
+<td>120ms</td>
+</tr>
+<tr>
+<td>Unique Binary Search Trees</td>
+<td>输出BST的所有方案数</td>
+<td>68ms</td>
+</tr>
+<tr>
+<td>Unique Paths II</td>
+<td>从左上角走到右下角的方案数,有障碍物</td>
+<td>24ms</td>
+</tr>
 
 <tr>
 <td></td>

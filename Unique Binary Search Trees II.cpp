@@ -9,28 +9,28 @@
  */
 class Solution {
 private:
-    vector<TreeNode *> gen(int l,int r) {
-        vector<TreeNode *>ret;
-        if (l > r) {
+    void dfs(vector<TreeNode *> &ret, int lo, int hi) {
+        if (lo > hi) {
             ret.push_back(NULL);
-            return ret;
         }
-        for (int m = l ; m <= r ; m ++) {
-            vector<TreeNode *> left = gen(l , m - 1);
-            vector<TreeNode *> right = gen(m + 1 , r);
+        for (int mid = lo ; mid <= hi ; mid ++) {
+            vector<TreeNode *> left , right;
+            dfs(left , lo , mid - 1);
+            dfs(right , mid + 1, hi);
             for (int i = 0 ; i < left.size() ; i ++) {
                 for (int j = 0 ; j < right.size() ; j ++) {
-                    TreeNode *root = new TreeNode(m);
+                    TreeNode *root = new TreeNode(mid);
                     root->left = left[i];
                     root->right = right[j];
                     ret.push_back(root);
                 }
             }
         }
-        return ret;
     }
 public:
     vector<TreeNode *> generateTrees(int n) {
-        return gen(1 , n);
+        vector<TreeNode *> ret;
+        dfs(ret , 1 , n);
+        return ret;
     }
 };

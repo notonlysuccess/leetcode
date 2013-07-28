@@ -8,24 +8,19 @@
  * };
  */
 class Solution {
-    void dfs(TreeNode *root,int val,int &ans) {
-		if (root->left == NULL && root->right == NULL) {
-			ans += val * 10 + root->val;
-		}
-		if (root->left) {
-			dfs(root->left , val * 10 + root->val , ans);
-		}
-		if (root->right) {
-			dfs(root->right , val * 10 + root->val , ans);
-		}
-	}
+private:
+    int add(int num,TreeNode *root) {
+        if (!root) {
+            return 0;
+        }
+        num = num*10 + root->val;
+        if (!root->left && !root->right) {
+            return num;
+        }
+        return add(num,root->left) + add(num,root->right);
+    }
 public:
     int sumNumbers(TreeNode *root) {
-    	if (root == NULL) {
-    		return 0;
-    	}
-        int ans = 0;
-        dfs(root , 0 , ans);
-        return ans;
+        return add(0 , root);
     }
 };
