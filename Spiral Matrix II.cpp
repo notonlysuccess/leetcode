@@ -1,25 +1,23 @@
 class Solution {
+private:
+    int dx[4] = {0,1,0,-1};
+    int dy[4] = {1,0,-1,0};
 public:
     vector<vector<int> > generateMatrix(int n) {
         vector<vector<int>> ret(n , vector<int>(n,0));
-        int total = n * n;
         int x = 0 , y = 0 , d = 0;
-        int dx[] = {0,1,0,-1};
-        int dy[] = {1,0,-1,0};
-        for (int i = 1 ; i <= total ; i ++) {
+        int nn = n * n;
+        for (int i = 1 ; i <= nn ; i ++) {
             ret[x][y] = i;
-            x += dx[d];
-            y += dy[d];
-            if (x < 0 || x == n || y < 0 || y == n || ret[x][y]) {
-                x -= dx[d];
-                y -= dy[d];
-                d ++;
-                if (d == 4) {
-                    d = 0;
-                }
-                x += dx[d];
-                y += dy[d];
+            int xx = x + dx[d];
+            int yy = y + dy[d];
+            if (xx < 0 || xx == n || yy < 0 || yy == n || ret[xx][yy]) {
+                d = (d + 1)%4;
+                xx = x + dx[d];
+                yy = y + dy[d];
             }
+            x = xx;
+            y = yy;
         }
         return ret;
     }

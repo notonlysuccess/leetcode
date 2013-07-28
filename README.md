@@ -503,6 +503,61 @@
 <td>lower_bound</td>
 <td>40ms</td>
 </tr>
+<tr>
+<td><b>Set Matrix Zeroes</b></td>
+<td>如果有某个数字是0,那么把这行这列都设置为0,in-place,用第一行第一列记录,注意顺序</td>
+<td>372ms</td>
+</tr>
+<tr>
+<td>Simplify Path</td>
+<td>将unix的文件路径化简,用stringstream和栈来做</td>
+<td>48ms</td>
+</tr>
+<tr>
+<td>Sort Colors</td>
+<td>0,1,2数组的排序,一个循环</td>
+<td>28ms</td>
+</tr>
+<tr>
+<td>Spiral Matrix II</td>
+<td>回字形填充矩阵</td>
+<td>24ms</td>
+</tr>
+<tr>
+<td>Spiral Matrix</td>
+<td>回字形遍历矩阵</td>
+<td>16ms</td>
+</tr>
+<tr>
+<td>Sqrt(x)</td>
+<td>模拟整数开平方 , 二分 , 用除法</td>
+<td>48ms</td>
+</tr>
+<tr>
+<td><b>String to Integer (atoi)</b></td>
+<td>模拟atoi , 只返回第一部分的值 , 注意int范围</td>
+<td>52ms</td>
+</tr>
+<tr>
+<td><b>Subsets II</b></td>
+<td>有重复数字的所有子串</td>
+<td>60ms</td>
+</tr>
+<tr>
+<td>Subsets</td>
+<td>组数的子串</td>
+<td>40ms</td>
+</tr>
+<tr>
+<td><b>Substring with Concatenation of All Words</b></td>
+<td>在S中找到恰好包含vector L的所有子串 O(S.length() * L[0].length())</td>
+<td>244</td>
+</tr>
+<tr>
+<td><b>Sudoku Solver</b></td>
+<td>解数独,唯一解,dfs</td>
+<td>24ms</td>
+</tr>
 
 <tr>
 <td></td>

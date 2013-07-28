@@ -1,17 +1,15 @@
 class Solution {
 public:
     int sqrt(int x) {
-        int lo = 0;
-        int hi = min(x , 0xffff);
+        int lo = 1 , hi = 0xffff;
         while (lo <= hi) {
-            int mid = lo + (hi - lo) / 2;
-            int sq = (mid+1)*(mid+1);
-            if (sq < 0 || sq > x) {
-                hi = mid - 1;
-            } else {
+            int mid = (lo + hi) >> 1;
+            if (mid <= x / mid) {
                 lo = mid + 1;
+            } else {
+                hi = mid - 1;
             }
         }
-        return hi + 1;
+        return hi;
     }
 };
