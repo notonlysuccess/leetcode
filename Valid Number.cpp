@@ -1,34 +1,38 @@
 class Solution {
+private:
+    int next[9][5] = {
+    //space , -+ , . , e , digit
+        {0,1,3,-1,2},
+        {-1,-1,3,-1,2},
+        {8,-1,4,5,2},
+        {-1,-1,-1,-1,4},
+        {8,-1,-1,5,4},
+        {-1,6,-1,-1,7},
+        {-1,-1,-1,-1,7},
+        {8,-1,-1,-1,7},
+        {8,-1,-1,-1,-1}
+    };
 public:
     bool isNumber(const char *s) {
-        bool dot = false;
-        bool e = false;
-        int num = 0;
-        int count = 0;
-        for (int i = 0 ; s[i] ; i ++) {
-            if (s[i] != ' ' && (i == 0 || s[i-1] == ' ')) {
-                count ++;
-                if (count == 2) return false;
+        int state = 0;
+        for ( ; *s ; s ++) {
+            if (*s == ' ') {
+                state = next[state][0];
+            } else if (*s == '-' || *s == '+') {
+                state = next[state][1];
+            } else if (*s == '.') {
+                state = next[state][2];
+            } else if (*s == 'e') {
+                state = next[state][3];
+            } else if (isdigit(*s)) {
+                state = next[state][4];
+            } else {
+                return false;
             }
-            if (s[i] == '+' || s[i] == '-') {
-                if (i && s[i-1] != ' ' && s[i-1] != 'e') return false;
-            } else if (s[i] == '.') {
-                if (dot) return false;
-                if (e) return false;
-                dot = true;
-            } else if (s[i] == 'e') {
-                if (num == 0) return false;
-                if (e) return false;
-                e = true;
-                num = 0;
-            } else if (isdigit(s[i])) {
-                if (i == 0 || !isdigit(s[i-1])) {
-                    num ++;
-                }
-            } else if (s[i] != ' ') {
+            if (state == -1) {
                 return false;
             }
         }
-        return num >= 1;
+        return state == 2 || state == 4 || state == 7 || state == 8;
     }
 };

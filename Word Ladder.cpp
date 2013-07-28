@@ -2,7 +2,6 @@ class Solution {
 private:
     vector<string> words;
     vector<vector<int>> edge;
-    vector<vector<int>> pre;
     unordered_map<string,int> ID;
     vector<int> dis;
     void build(unordered_set<string> &dict) {
@@ -29,53 +28,33 @@ private:
             }
         }
     }
-    void bfs(int start,int end) {
+    int bfs(int start,int end) {
         dis = vector<int>(words.size() , -1);
-        pre.clear();
-        pre.resize(words.size());
         queue<int> que;
-        que.push(end);
-        dis[end] = 0;
+        que.push(start);
+        dis[start] = 0;
         while (!que.empty()) {
             int u = que.front();
-            if (u == start);
+            if (u == end) {
+                break;
+            }
             que.pop();
             int d = dis[u] + 1;
             for (int i = 0 ; i < edge[u].size() ; i ++) {
                 int v = edge[u][i];
                 if (dis[v] == -1) {
                     dis[v] = d;
-                    pre[v].push_back(u);
                     que.push(v);
-                } else if (dis[v] == d) {
-                    pre[v].push_back(u);
                 }
             }
         }
-    }
-    void gen(int start,int end,vector<vector<string>> &ret,vector<int> &temp) {
-        temp.push_back(start);
-        if (start == end) {
-            ret.push_back(vector<string>());
-            for (int i = 0 ; i < temp.size() ; i ++) {
-                ret.back().push_back(words[ temp[i] ]);
-            }
-        } else {
-          for (int i = 0 ; i < pre[start].size() ; i ++) {
-              gen(pre[start][i] , end , ret , temp);
-            }
-        }
-        temp.pop_back();
+        return dis[end] + 1;
     }
 public:
-    vector<vector<string>> findLadders(string start, string end, unordered_set<string> &dict) {
-        vector<vector<string>> ret;
+    int ladderLength(string start, string end, unordered_set<string> &dict) {
         dict.insert(start);
         dict.insert(end);
         build(dict);
-        bfs(ID[start] , ID[end]);
-        vector<int> temp;
-        gen(ID[start] , ID[end] , ret , temp);
-        return ret;
+        return bfs(ID[start] , ID[end]);
     }
-}; 
+};

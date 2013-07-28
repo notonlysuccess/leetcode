@@ -613,14 +613,59 @@
 <td>从左上角走到右下角的方案数,有障碍物</td>
 <td>24ms</td>
 </tr>
-
 <tr>
-<td></td>
-<td></td>
-<td></td>
+<td>Unique Paths</td>
+<td>从左上角走到右下角的方案数</td>
+<td>12ms</td>
+</tr>
+<tr>
+<td><b>Valid Number</b></td>
+<td>判断字符串是否是个合法数字, " -1.2e+3 " 9个状态的自动机</td>
+<td>24ms</td>
+</tr>
+<tr>
+<td>Valid Palindrome</td>
+<td>判断一个字符串是否是回文,只考虑大小写数字,大小写不care</td>
+<td>52ms</td>
+</tr>
+<tr>
+<td>Valid Parentheses</td>
+<td>判断(){}[]是否合法,stack O(n)</td>
+<td>48ms</td>
+</tr>
+<tr>
+<td>Valid Sudoku</td>
+<td>判断数独已经填了的数字是否冲突</td>
+<td>48ms</td>
+</tr>
+<tr>
+<td><b>Validate Binary Search Tree</b></td>
+<td>判断一个树是否是BST</td>
+<td>64ms</td>
+</tr>
+<tr>
+<td>Wildcard Matching</td>
+<td>模拟通配符匹配 O(1)空间</td>
+<td>88ms</td>
+</tr>
+<tr>
+<td>Word Ladder II</td>
+<td>从一个词到另一个词的方案,要求相邻的单词相差1且出现才多给的词典中</td>
+<td>1036ms</td>
+</tr>
+<tr>
+<td>Word Ladder</td>
+<td>从一个词到另一个词的距离,要求相邻的单词相差1且出现才多给的词典中</td>
+<td>1004ms</td>
+</tr>
+<tr>
+<td>Word Search</td>
+<td>在二维矩阵中找一个串,字母不能重复用,暴力dfs</td>
+<td>88ms</td>
+</tr>
+<tr>
+<td>ZigZag Conversion</td>
+<td>Z字型遍历字符串</td>
+<td>92ms</td>
 </tr>
 </table>
- 
-Unique Binary Search Trees II		把所有的二叉搜索树构造出并保存起来	 ***  
-Valid Number				有限自动机				 ***  
-Word Ladder II				记录所有路径				 ***  

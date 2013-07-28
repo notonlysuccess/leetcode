@@ -1,11 +1,10 @@
 class Solution {
 public:
     bool isMatch(const char *s, const char *p) {
-        const char *beginS = NULL , *beginP = NULL;
+        const char *ss = 0 , *pp = 0;
         while (*s) {
             if (*s == *p || *p == '?') {
-                s ++;
-                p ++;
+                s ++ , p ++;
             } else if (*p == '*') {
                 while (*p == '*') {
                     p ++;
@@ -13,11 +12,11 @@ public:
                 if (!*p) {
                     return true;
                 }
-                beginS = s;
-                beginP = p;
-            } else if (beginP) {
-                s = ++beginS;
-                p = beginP;
+                ss = s;
+                pp = p;
+            } else if (ss) {
+                s = ++ ss;
+                p = pp;
             } else {
                 return false;
             }
