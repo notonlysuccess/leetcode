@@ -1,4 +1,3 @@
-
 <table border="1">
 <tr>
 <td width = "300">3Sum Closest</td>		
